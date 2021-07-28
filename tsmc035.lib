@@ -1,0 +1,291 @@
+* ************************************************** **************************************
+
+* * TSMC 0.35um Mixed-mode/RF, 5.0 V ESD, 2-poly SPICE MODEL *
+
+* ************************************************** **************************************
+
+* <http://www.mosis.com/cgi-bin/cgiwrap/umosis/swp/params/tsmc-035/t88f_mm_epi-params.txt>
+
+* This model has been modified for use with PSPICE 9.1 student version
+
+* NMOS transistor model name: MN
+
+* PMOS transistor model name: MP
+
+*------------------------------------------------------------------------------------------
+
+.MODEL MN NMOS (
+
++LEVEL = 7
+
++TNOM = 27 MOBMOD = 1 CAPMOD = 2
+
+*
+
+* Process and parameters extraction related model parameters
+
+*
+
++TOX = 7.8E-9 NLX = 4.058176E-7
+
+*
+
+* Threshold voltage related model parameters
+
+*
+
++K1 = 0.6129988 K2 = 7.542666E-4 K3 = 100
+
++K3B = -10 NCH = 2.2E17 VTH0 = 0.4730643
+
++VOFF = -0.0876189 DVT0 = 0.4689888 DVT0W = 0
+
++DVT1W = 0 DVT2W = 0 DVT1 = 0.2917777
+
++DVT2 = -0.3 KETA = 3.56905E-3 PSCBE1 = 7.163825E8
+
++PSCBE2 = 1E-3 PVTH0 = -0.05 PK2 = 4.477143E-5
+
++WKETA = -1.015121E-3 LKETA = -0.0120304
+
+*
+
+* Mobility related model parameters
+
+*
+
++U0 = 355.1321831 UA = -8.40947E-10 UB = 2.261637E-18
+
++UC = 2.996492E-11 WR = 1
+
+*
+
+* Subthreshold related parameters
+
+*
+
++DSUB = 0.7823743 ETA0 = 1 ETAB = -0.0732914
+
++NFACTOR = 2.0725615
+
+*
+
+* Saturation related parameters
+
+*
+
++PCLM = 1.676784 PDIBLC1 = 1.543456E-4 PDIBLC2 = 4.733841E-3
+
++PDIBLCB = 0.1 DROUT = 3.345392E-4 PVAG = 3.072725E-3
+
++DELTA = 0.01 VSAT = 1.875162E5 AGS = 0.1167968
+
++A0 = 0.8883904 A1 = 0 A2 = 0.3740786
+
++B0 = 1.155842E-6 B1 = 5E-6
+
+*
+
+* Geometry modulation related parameters
+
+*
+
++DWG = -4.274339E-9 W0 = 3.02827E-5 DWB = 5.243879E-9
+
++WL = 0 WLN = 1 WW = 0
+
++WWN = 1 WWL = 0 LL = 0
+
++LLN = 1 LW = 0 LWN = 1
+
++LWL = 0
+
+*
+
+* Temperature effect parameters
+
+*
+
++PRT = 0 UTE = -1.5 KT1 = -0.11
+
++KT1L = 0 KT2 = 0.022 UA1 = 4.31E-9
+
++UB1 = -7.61E-18 UC1 = -5.6E-11 AT = 3.3E4
+
+*
+
+* Overlap capacitance related and dynamic model parameters
+
+*
+
++CGDO = 2.69E-10 CGSO = 2.69E-10 CGBO = 1E-12
+
++CJSWG = 1.82E-10 PBSWG = 0.8 MJSWG = 0.1824357
+
++CF = 0 PRDSW = -121.7614848 XPART = 0.5
+
+*
+
+* Parasitic resistance and capacitance related model parameters
+
+*
+
++RDSW = 1.131183E3 PRWG = -0.1100856 PRWB = -0.2
+
++CIT = 0 CDSC = 2.4E-4 CDSCD = 0
+
++CDSCB = 0
+
+*
+
+* Common extrinsic model parameters
+
+*
+
++WINT = 7.31909E-8 LINT = 2.503346531E-8 XJ = 1E-7
+
++RSH = 78.2 CJ = 9.015359E-4 PB = 0.8
+
++MJ = 0.3608969 CJSW = 2.782744E-10 PBSW = 0.8
+
++MJSW = 0.1801287 )
+
+*
+
+.MODEL MP PMOS (
+
++LEVEL = 7
+
++TNOM = 27 MOBMOD = 1 CAPMOD = 2
+
+*
+
+* Process and parameters extraction related model parameters
+
+*
+
++TOX = 7.8E-9 NLX = 2.06513E-7
+
+*
+
+* Threshold voltage related model parameters
+
+*
+
++K1 = 0.4304724 K2 = -0.0112912 K3 = 86.4300172
+
++K3B = -5 NCH = 8.52E16 VTH0 = -0.6954453
+
++VOFF = -0.140743 DVT0W = 0 DVT1W = 0
+
++DVT2W = 0 DVT0 = 0.3128439 DVT1 = 0.8240817
+
++DVT2 = -0.2517458 KETA = -4.16221E-3 PSCBE1 = 7.927378E10
+
++PK2 = 2.04063E-3 WKETA = 4.61596E-3 LKETA = -8.540344E-3
+
++PSCBE2 = 5.007084E-10 PVTH0 = 0.0253723
+
+*
+
+* Mobility related model parameters
+
+*
+
++U0 = 150.785921 UA = 1E-10 UB = 1.789607E-18
+
++UC = -1.8798E-11 WR = 1
+
+*
+
+* Subthreshold related parameters
+
+*
+
++DSUB = 0.2940371 ETA0 = 0.032156 ETAB = 5.85316E-3
+
++NFACTOR = 2
+
+*
+
+* Saturation related parameters
+
+*
+
++PCLM = 4.7751455 PDIBLC1 = 2.143338E-3 PDIBLC2 = -2.300289E-6
+
++PDIBLCB = -6.805486E-4 DROUT = 2.413411E-4 PVAG = 15
+
++DELTA = 0.01 VSAT = 1.999188E5 AGS = 0.3099053
+
++A0 = 1.1641922 A1 = 4.218536E-3 A2 = 1
+
++B0 = 2.120097E-6 B1 = 5E-6
+
+*
+
+* Geometry modulation related parameters
+
+*
+
++DWG = -1.858462E-8 W0 = 6.598922E-6 DWB = 1.143752E-8
+
++WL = 0 WLN = 1 WW = 0
+
++WWN = 1 WWL = 0 LL = 0
+
++LLN = 1 LW = 0 LWN = 1
+
++LWL = 0
+
+*
+
+* Temperature effect parameters
+
+*
+
++PRT = 0 UTE = -1.5 KT1 = -0.11
+
++KT1L = 0 KT2 = 0.022 UA1 = 4.31E-9
+
++UB1 = -7.61E-18 UC1 = -5.6E-11 AT = 3.3E4
+
+*
+
+* Overlap capacitance related and dynamic model parameters
+
+*
+
++CGDO = 2.05E-10 CGSO = 2.05E-10 CGBO = 1E-12
+
++CJSWG = 4.42E-11 PBSWG = 0.99 MJSWG = 0.3570517
+
++CF = 0 PRDSW = -76.9871264 XPART = 0.5
+
+*
+
+* Parasitic resistance and capacitance related model parameters
+
+*
+
++RDSW = 3.913702E3 PRWG = -0.1079321 PRWB = -4.46657E-3
+
++CIT = 0 CDSC = 2.4E-4 CDSCD = 0
+
++CDSCB = 0
+
+*
+
+* Common extrinsic model parameters
+
+*
+
++WINT = 7.50604E-8 LINT = 2.5E-8 XJ = 1E-7
+
++RSH = 150.7 CJ = 1.397158E-3 PB = 0.99
+
++MJ = 0.5773462 CJSW = 3.176388E-10 PBSW = 0.99
+
++MJSW = 0.3570517 )
+
+*
